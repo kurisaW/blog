@@ -1,1 +1,0 @@
-![image-20220902151942956](https://raw.githubusercontent.com/kurisaW/picbed/main/img/202209021519098.png)
