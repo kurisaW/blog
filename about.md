@@ -17,4 +17,4 @@ My Blog [tick here](https://blog.csdn.net/qq_56914146)
 
 ### Contact me
 
-[kurisaW@kurisaW.com](yifang.wangyq@qq.com)
+[kurisaW@kurisaW.com](yifang.wangyq@foxmail.com)
