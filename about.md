@@ -12,10 +12,10 @@ permalink: /about/
 
 ### More Information
 
-##### My CSDN Blog(China) [tick here](https://blog.csdn.net/qq_56914146)
+###### My CSDN Blog(China) [tick here](https://blog.csdn.net/qq_56914146)
 
 ![CSDN 数据](https://stats.justsong.cn/api/csdn?id=qq_56914146)
 
 ### Contact me
 
-##### [yifang.wangyq@foxmail.com](2053731441@qq.com)
+###### [yifang.wangyq@foxmail.com](2053731441@qq.com)
