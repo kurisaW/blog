@@ -17,6 +17,7 @@
 
 	./configure
 
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/36b1e2cc4bdb42019d127e711fcd7ca7.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5Lul5pS-Xw==,size_20,color_FFFFFF,t_70,g_se,x_16)
 再次执行：
 ```
