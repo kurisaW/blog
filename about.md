@@ -12,10 +12,9 @@ permalink: /about/
 
 ### More Information
 
-###### My CSDN Blog(China) [tick here](https://blog.csdn.net/qq_56914146)
-
-![CSDN 数据](https://stats.justsong.cn/api/csdn?id=qq_56914146)
+![Metrics](https://metrics.lecoq.io/kurisaW?template=classic&languages=1&followup=1&introduction=1&achievements=1&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&languages=false&languages.limit=8&languages.threshold=0%25&languages.other=false&languages.colors=github&languages.sections=most-used&languages.indepth=false&languages.analysis.timeout=15&languages.analysis.timeout.repositories=7.5&languages.categories=markup%2C%20programming&languages.recent.categories=markup%2C%20programming&languages.recent.load=300&languages.recent.days=14&followup=false&followup.sections=repositories&followup.indepth=false&followup.archived=true&introduction=false&introduction.title=true&achievements=false&achievements.threshold=C&achievements.secrets=true&achievements.display=compact&achievements.limit=0&config.timezone=Asia%2FShanghai)
 
 ### Contact me
 
 ###### [yifang.wangyq@foxmail.com](2053731441@qq.com)
+
