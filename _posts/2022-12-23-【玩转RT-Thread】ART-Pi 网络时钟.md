@@ -1,7 +1,8 @@
+﻿
 ## 《玩转RT-Thread》自制网络时钟
 
 ---
-
+@[toc]
  ## 一、准备工作
 
 * 开发平台：RT-Thread Studio
@@ -10,36 +11,43 @@
 * 主控芯片：STM32H750
 * 温湿度传感器：SHT30
 * 显示模组：0.96’OLED（SSD1306）
+* 串口调试助手：SecureCRT
 
 注意：这里由于ART-PI开发板自带WiFi模组，可直接使能。如果使用其他开发板，可考虑使用ESP8266通信模块。
 
 ## 二、新建RT-Thread 项目
 
-![image-20220610074755216](G:/Typora/user_potograph/image-20220610074755216.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/dfeff108ee0241919514065992e79ef8.png)
 
 
 
-![image-20220610074802308](G:/Typora/user_potograph/image-20220610074802308.png)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/9f49c13343914adf8d92f12a1ebf832e.png)
+
 
 ## 三、获取温湿度数据
 
 #### 1、双击打开左边导航栏的RT-Thread Setting
 
-![image-20220610075237621](G:/Typora/user_potograph/image-20220610075237621.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/096e053c2ec545a9950c86dcb1e12d9e.png)
+
 
 #### 2、使能软件模拟i2c（单击点亮即可）
 
-![image-20220610075415025](G:/Typora/user_potograph/image-20220610075415025.png)
+![](https://img-blog.csdnimg.cn/6bb6a362155641c0b0b6fa0953c60e45.png)
+
 
 #### 3、配置i2c及相关引脚
 
 `这里的i2c引脚配置依自己开发板而定，配置完成后CTRL+S保存配置`
 
-![image-20220610075803328](G:/Typora/user_potograph/image-20220610075803328.png)
+![](https://img-blog.csdnimg.cn/ae8aaaa39cf04296809e01ccef73d980.png)
+
 
 #### 4、添加SHT3X软件包
 
-![image-20220610080544311](G:/Typora/user_potograph/image-20220610080544311.png)
+![](https://img-blog.csdnimg.cn/d480f380b622466c9c38ae5129550067.png)
+
 
 `CTRL+S保存配置，点击编译并下载`
 
@@ -47,11 +55,13 @@
 
 `此时打开串口工具，可以看到前面配置的i2c1和i2c3已经注册成功`
 
-![image-20220610081344668](G:/Typora/user_potograph/image-20220610081344668.png)
+![](https://img-blog.csdnimg.cn/04803141590e474bbe767242a8258ed5.png)
+
 
 此时在串口输入help，可以看出有一个sht3x配置
 
-![image-20220610082458443](G:/Typora/user_potograph/image-20220610082458443.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/bb9d35af5d19463282a1bd8400e90364.png)
+
 
 ```
 输入：
@@ -63,31 +73,37 @@ sht3x read（读取温湿度信息）
 
 #### 1、使能选择WiFi框架
 
-![image-20220610082838375](G:/Typora/user_potograph/image-20220610082838375.png)
+![](https://img-blog.csdnimg.cn/fac0022dff324acc9aa4a94e85407e69.png)
+
 
 #### 2、使能AP6212库
 
-![image-20220610082952194](G:/Typora/user_potograph/image-20220610082952194.png)
+![](https://img-blog.csdnimg.cn/97afeb11678140b2a5acbea44bc8937f.png)
+
 
 #### 3、添加easyflash和netutils软件包
 
-![image-20220610083254533](G:/Typora/user_potograph/image-20220610083254533.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/08cda56d446541358d2b5038545ca284.png)
 
-鼠标右键netutils打开配置项
 
-![image-20220610083332687](G:/Typora/user_potograph/image-20220610083332687.png)
+`鼠标右键netutils打开配置项`
 
-使能NTP (网络时间协议)客户端	
+![在这里插入图片描述](https://img-blog.csdnimg.cn/cd98d8f9bb0f4f15941c4617c32b7aa3.png)
 
-![image-20220610083435024](G:/Typora/user_potograph/image-20220610083435024.png)
 
-使能软件模拟RTC
+`使能NTP (网络时间协议)客户端	`
 
-![image-20220610083539255](G:/Typora/user_potograph/image-20220610083539255.png)
+![](https://img-blog.csdnimg.cn/7fe0c1a627d94d1dba87dbcf4918d127.png)
 
-CTRL+S保存配置
 
-修改配置
+`使能软件模拟RTC`
+
+![](https://img-blog.csdnimg.cn/f2ac26826c0a463bb1124804fcc7c563.png)
+
+
+`CTRL+S保存配置`
+
+`修改配置`
 
 ```cassandra
 (1)打开电脑中项目所在的路径-workpace-项目名称-packages-EasyFlash-v4.1.0-port，将port目录下的ef_fal_port.c文件复制到workpace-项目名称-board-port中
@@ -96,7 +112,7 @@ CTRL+S保存配置
 #define FAL_EF_PART_NAME "easyflash" //修改后的宏定义
 ```
 
-此时再编译并下载到开发板中
+`此时再编译并下载到开发板中`
 
 #### 4、连接WiFi
 
@@ -110,9 +126,8 @@ PASSWORD：WiFi密码
 
 #### 5、设置开机自连接WiFi
 
-（1）在board/port 目录下创建wifi_config.c文件来实现wifi上电自动连接
-
-代码如下:
+`（1）在board/port 目录下创建wifi_config.c文件来实现wifi上电自动连接
+代码如下:`
 
 ```c
 /*
@@ -365,7 +380,7 @@ void wlan_autoconnect_init(void)
 #endif
 ```
 
-（2）在main.c中添加自动连接函数
+`（2）在main.c中添加自动连接函数`
 
 ```c
 #include <rtthread.h>
@@ -398,19 +413,20 @@ static int vtor_config(void)
 INIT_BOARD_EXPORT(vtor_config);
 ```
 
-编译并下载，此时开发板就能够从flash中自动读取上次连接数据并自动连接WiFi了。
+`编译并下载，此时开发板就能够从flash中自动读取上次连接数据并自动连接WiFi了。`
 
 ## 五、OLED屏显示温湿度和实时时间信息
 
 #### 1、添加u8g2软件包
 
-![image-20220610084659587](G:/Typora/user_potograph/image-20220610084659587.png)
+![](https://img-blog.csdnimg.cn/9aa5ecc3b3484b14b1c57ef4c75aae73.png)
+
 
 #### 2、编写oled_display显示线程
 
-（1）在application分组下创建一个用户文件oled_display.cpp文件，存放本项目中的OLED显示代码。
+`（1）在application分组下创建一个用户文件oled_display.cpp文件，存放本项目中的OLED显示代码。`
 
-代码如下：
+`代码如下：`
 
 ```cpp
 #include <rthw.h>
@@ -592,7 +608,7 @@ MSH_CMD_EXPORT(oled_display, oled start);
 #endif
 ```
 
-（2）在 applications 文件夹下创建oled_display.h
+`（2）在 applications 文件夹下创建oled_display.h`
 
 ```c
 /*
@@ -620,7 +636,7 @@ void oled_display(void);
 #endif /* APPLICATIONS_OLED_DISPLAY_H_ */
 ```
 
-（3）最终的主函数
+`（3）最终的主函数`
 
 ```c
 /*
@@ -664,7 +680,7 @@ static int vtor_config(void)
 INIT_BOARD_EXPORT(vtor_config);
 ```
 
-（4）参考board.h关于i2c的引脚配置，同款开发板的作者可参照，当然此处的i2c1也可以直接在oled_display.cpp中直接定义，因为前面在RT-Thread Setting中就已经配置好了，可以直接定义，此处只作为一个重定义。
+`（4）参考board.h关于i2c的引脚配置，同款开发板的作者可参照，当然此处的i2c1也可以直接在oled_display.cpp中直接定义，因为前面在RT-Thread Setting中就已经配置好了，可以直接定义，此处只作为一个重定义。`
 
 ```c
 /*-------------------------- I2C CONFIG BEGIN --------------------------*/
@@ -684,11 +700,12 @@ INIT_BOARD_EXPORT(vtor_config);
 
 ## 六、实验展示
 
-![image-20220610090727517](G:/Typora/user_potograph/image-20220610090727517.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/c0cbf5357ce14d7d963684d4338eee9e.png)
 
-![image-20220610090746390](G:/Typora/user_potograph/image-20220610090746390.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/d329c18ee11d45a59252f42bb043663b.png)
 
-![image-20220610090802329](G:/Typora/user_potograph/image-20220610090802329.png)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/99f00b0cf72b4e20a0697914e7048f97.png)
 
 
 
@@ -716,3 +733,4 @@ extern "C"
 ---
 
 这次的分享就到这里，有相关问题的欢迎留言私信！
+
